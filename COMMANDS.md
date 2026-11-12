@@ -54,3 +54,7 @@ Result: SUCCESS
 ### 13. Session #10: clone both repos to /data/progress-save and /data/no-2-perfume-website, serve site on :8123
 $ git clone ...progress-save.git ; git clone ...no-2-perfume-website.git ; (cd no-2-perfume-website && python3 -m http.server 8123 &)
 Result: SUCCESS. website HEAD 6cae0d0.
+
+### 14. Session #10 screenshot check of 6cae0d0
+$ CHROME=/usr/local/bin/chromium NODE_PATH=/data/node_modules node progress-save/scripts/shot.js /tmp/s10 0,4.5,8.9 ; magick montage ...
+Result: SUCCESS (only favicon 404). Preview output/preview/s10_check.jpg
