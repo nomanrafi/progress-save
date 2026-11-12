@@ -42,3 +42,7 @@ Result: SUCCESS. site HEAD 0815772.
 ### 10. Session #9 screenshot test of 0815772
 $ (cd site && python3 -m http.server 8123 &) ; CHROME=/usr/local/bin/chromium NODE_PATH=/data/node_modules node project/scripts/shot.js /tmp/s9/a 0,2.5,4.5,6.3,7.4,8.9 ; magick montage ...
 Result: SUCCESS (only favicon 404). Preview output/preview/s9_sections.jpg
+
+### 11. Session #9 polish
+$ edit site/css/style.css (.hero-bottom bottom:11.5vh ; .ring width 18.5vw) ; site/js/main.js (FAQ bottle x1.55 y0.4) ; push.sh site
+Result: SUCCESS — website 6f0956d. Re-shooting 0,1.2,8.9 -> /tmp/s9b

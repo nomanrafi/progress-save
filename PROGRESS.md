@@ -44,6 +44,8 @@ Extra chat instruction (Session #1): "Glb file 'no 2 perfume website er repo te 
 - Session #8: (b)+(c) re-applied and pushed (website 0815772).
 - Then: verify with `CHROME=/usr/local/bin/chromium NODE_PATH=/data/node_modules node scripts/shot.js /tmp/s 0,2.5,4.5,6.3,7.4,8.9` (site served on :8123), then Step 7 README.
 
+- Session #9: verified 0815772 (all sections render, output/preview/s9_sections.jpg). Pushed 6f0956d: name block raised (video has name right under product), ring bigger, FAQ bottle moved right. NEXT: check /tmp-style shots 0,1.2,8.9 then write README.md in website repo (Step 7).
+
 ## Problems / Notes
 - (none yet)
 
