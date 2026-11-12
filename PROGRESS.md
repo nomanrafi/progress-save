@@ -40,7 +40,8 @@ Extra chat instruction (Session #1): "Glb file 'no 2 perfume website er repo te 
 - Step 0: frames extracted (ffmpeg fps=2, crop of laptop screen), design breakdown above.
 
 ## NEXT STEP (exact instructions for the next agent)
-- See Plan; work in website repo /data/no-2-perfume-website.
+- Session #7 found: (a) detail bottle full-spun showing blank back -> now sways (pushed 33cb076); (b) scroll smoothing was frame-rate dependent -> lagged badly on slow GPUs (statement/FAQ appeared late) -> fixed with dt-based k(); (c) FAQ bottle moved up/right so questions are readable.
+- Then: verify with `CHROME=/usr/local/bin/chromium NODE_PATH=/data/node_modules node scripts/shot.js /tmp/s 0,2.5,4.5,6.3,7.4,8.9` (site served on :8123), then Step 7 README.
 
 ## Problems / Notes
 - (none yet)

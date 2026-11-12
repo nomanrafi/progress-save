@@ -26,3 +26,7 @@ $ git clone ... progress ; git clone ... site ; (cd site && python3 -m http.serv
 $ node progress/scripts/shot.js /tmp/s 0      (Playwright + /usr/local/bin/chromium, swiftshader WebGL, 1440x900)
 Result: SUCCESS — site loads, GLBs render, carousel visible. Only a 404 (favicon). Preview: output/preview/s4_hero_v1.png
 Observed: bottles too big & overlapping at edges vs video (video: ~7 small items spread across width, centre one higher under ring light).
+
+### 7. Session #7: re-clone to /data/progress and /data/site, screenshot all sections
+$ CHROME=/usr/local/bin/chromium NODE_PATH=/data/node_modules node progress/scripts/shot.js /tmp/s7/a 0,1,2.5,4.5,6.2,7,8.2,8.9
+Result: SUCCESS. Preview output/preview/s7_sections.jpg. Found: blank back of bottle during features; scroll lag (smoothing per-frame, slow swiftshader fps).

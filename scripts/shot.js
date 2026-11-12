@@ -3,7 +3,7 @@ const { chromium } = require('playwright');
 (async () => {
   const out = process.argv[2] || '/tmp/s';
   const stops = (process.argv[3] || '0').split(',').map(Number);
-  const b = await chromium.launch({ executablePath: '/usr/local/bin/chromium', args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
+  const b = await chromium.launch({ executablePath: process.env.CHROME || '/usr/local/bin/chromium', args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
   const p = await b.newPage({ viewport: { width: 1440, height: 900 } });
   p.on('console', (m) => m.type() === 'error' && console.log('CONSOLE', m.text()));
   p.on('pageerror', (e) => console.log('PAGEERROR', e.message));
