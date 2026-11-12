@@ -46,3 +46,7 @@ Result: SUCCESS (only favicon 404). Preview output/preview/s9_sections.jpg
 ### 11. Session #9 polish
 $ edit site/css/style.css (.hero-bottom bottom:11.5vh ; .ring width 18.5vw) ; site/js/main.js (FAQ bottle x1.55 y0.4) ; push.sh site
 Result: SUCCESS — website 6f0956d. Re-shooting 0,1.2,8.9 -> /tmp/s9b
+
+### 12. Session #9 final
+$ write site/README.md ; push.sh site ; screenshots 0,1.2,8.9 -> output/preview/s9_polish.jpg
+Result: SUCCESS

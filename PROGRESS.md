@@ -21,8 +21,8 @@ Extra chat instruction (Session #1): "Glb file 'no 2 perfume website er repo te 
 7. Product goes back to dark bg, then "FOIRE AUX QUESTIONS" huge heavy italic title + FAQ accordion list (thin lines, chevrons).
 
 ## Status
-- Overall: IN PROGRESS
-- Current step: Step 6/8 (test + polish)
+- Overall: DONE (open to further polish on user feedback)
+- Current step: done
 - Last updated: 2026-11-12 18:35 (Asia/Dhaka) by Session #9
 
 ## Plan
@@ -32,8 +32,8 @@ Extra chat instruction (Session #1): "Glb file 'no 2 perfume website er repo te 
 - [x] Step 3: Hero UI overlay (index.html + css/style.css, vw sizes)
 - [x] Step 4: Scroll detail section (code written, untested)
 - [x] Step 5: Statement + FAQ section (code written, untested)
-- [ ] Step 6: Screenshot test (headless chromium) + polish  ← IN PROGRESS (Session #4)
-- [ ] Step 7: Final check, README, summary
+- [x] Step 6: Screenshot test (headless chromium) + polish
+- [x] Step 7: Final check, README, summary
 
 ## Done so far (details)
 - Step 1: website repo layout: index.html, css/{fonts,style}.css, js/{main.js,vendor/three.module.js,GLTFLoader.js,BufferGeometryUtils.js,RoomEnvironment.js}, assets/models/velora-eau-de-parfum.glb (black+gold), velora-blue-elegance.glb (blue+gold), assets/fonts/archivo-italic-var.woff2 (Archivo italic, wdth 125, wght 800-900 = heavy wide italic like video), inter-var.woff2.
@@ -45,6 +45,11 @@ Extra chat instruction (Session #1): "Glb file 'no 2 perfume website er repo te 
 - Then: verify with `CHROME=/usr/local/bin/chromium NODE_PATH=/data/node_modules node scripts/shot.js /tmp/s 0,2.5,4.5,6.3,7.4,8.9` (site served on :8123), then Step 7 README.
 
 - Session #9: verified 0815772 (all sections render, output/preview/s9_sections.jpg). Pushed 6f0956d: name block raised (video has name right under product), ring bigger, FAQ bottle moved right. NEXT: check /tmp-style shots 0,1.2,8.9 then write README.md in website repo (Step 7).
+
+- Session #9 final: shots output/preview/s9_polish.jpg OK. README.md added to website repo. Task DONE. If user asks more: tweak sizes in css/style.css / poses in js/main.js layout().
+
+## How to use the result
+- Website repo: `python3 -m http.server 8000` in repo root, open localhost:8000, or enable GitHub Pages (main, root).
 
 ## Problems / Notes
 - (none yet)
