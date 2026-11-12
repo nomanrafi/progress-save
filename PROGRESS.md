@@ -23,7 +23,7 @@ Extra chat instruction (Session #1): "Glb file 'no 2 perfume website er repo te 
 ## Status
 - Overall: IN PROGRESS
 - Current step: Step 6/8 (test + polish)
-- Last updated: 2026-11-12 18:25 (Asia/Dhaka) by Session #7
+- Last updated: 2026-11-12 18:35 (Asia/Dhaka) by Session #8
 
 ## Plan
 - [x] Step 0: Setup progress repo, analyse video, plan
@@ -60,3 +60,4 @@ Extra chat instruction (Session #1): "Glb file 'no 2 perfume website er repo te 
 - Session #5 (2026-11-12 18:00): started, resuming step 6 (carousel layout tuning + test all sections). Pushed carousel tuning to website repo (c79e1a7). Stopped while fixing scroll smoothing / testing desktop.
 - Session #6 (2026-11-12 18:10): started, resuming step 6 (verify scroll sections, smooth scroll, match video sizes).
 - Session #7 (2026-11-12 18:25): started, resuming step 6 (verify scroll sections, polish to match video 1:1).
+- Session #8 (2026-11-12 18:35): started, resuming step 6. Found Session #7 fixes (b) dt-based smoothing and (c) FAQ bottle move were NOT pushed (website HEAD 33cb076). Redoing them.
