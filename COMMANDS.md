@@ -30,3 +30,7 @@ Observed: bottles too big & overlapping at edges vs video (video: ~7 small items
 ### 7. Session #7: re-clone to /data/progress and /data/site, screenshot all sections
 $ CHROME=/usr/local/bin/chromium NODE_PATH=/data/node_modules node progress/scripts/shot.js /tmp/s7/a 0,1,2.5,4.5,6.2,7,8.2,8.9
 Result: SUCCESS. Preview output/preview/s7_sections.jpg. Found: blank back of bottle during features; scroll lag (smoothing per-frame, slow swiftshader fps).
+
+### 8. Session #8: re-clone to /data/project and /data/site, apply dt-based smoothing fix
+$ edit site/js/main.js (k(rate,dt) helper; pos/mouse/scroll smoothing; max 2-screen lag; FAQ bottle x1.05 y0.55 z0.6 sc0.9) ; scripts/push.sh /data/site "..."
+Result: SUCCESS — website repo 0815772.
