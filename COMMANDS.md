@@ -38,3 +38,7 @@ Result: SUCCESS — website repo 0815772.
 ### 9. Session #9: clone to /data/project and /data/site (token #2 for site remote)
 $ git clone ...progress-save.git project ; git clone ...no-2-perfume-website.git site
 Result: SUCCESS. site HEAD 0815772.
+
+### 10. Session #9 screenshot test of 0815772
+$ (cd site && python3 -m http.server 8123 &) ; CHROME=/usr/local/bin/chromium NODE_PATH=/data/node_modules node project/scripts/shot.js /tmp/s9/a 0,2.5,4.5,6.3,7.4,8.9 ; magick montage ...
+Result: SUCCESS (only favicon 404). Preview output/preview/s9_sections.jpg
