@@ -23,7 +23,7 @@ Extra chat instruction (Session #1): "Glb file 'no 2 perfume website er repo te 
 ## Status
 - Overall: IN PROGRESS
 - Current step: Step 6/8 (test + polish)
-- Last updated: 2026-11-12 17:40 (Asia/Dhaka) by Session #3
+- Last updated: 2026-11-12 18:25 (Asia/Dhaka) by Session #7
 
 ## Plan
 - [x] Step 0: Setup progress repo, analyse video, plan
@@ -58,3 +58,4 @@ Extra chat instruction (Session #1): "Glb file 'no 2 perfume website er repo te 
 - Session #4 (2026-11-12 17:52): started, resuming: test + fix WIP main.js (steps 2-5), then step 6 screenshot test. Got first hero screenshot; was tuning carousel layout when stopped (tuning NOT pushed).
 - Session #5 (2026-11-12 18:00): started, resuming step 6 (carousel layout tuning + test all sections). Pushed carousel tuning to website repo (c79e1a7). Stopped while fixing scroll smoothing / testing desktop.
 - Session #6 (2026-11-12 18:10): started, resuming step 6 (verify scroll sections, smooth scroll, match video sizes).
+- Session #7 (2026-11-12 18:25): started, resuming step 6 (verify scroll sections, polish to match video 1:1).
