@@ -15,3 +15,8 @@ Result: SUCCESS. Website repo still only has 2 GLBs (previous scaffold was lost)
 ### 4. Session #3: re-clone both repos into /data/progress and /data/site
 $ git clone https://x-access-token:<TOKEN>@github.com/nomanrafi/progress-save.git progress ; ...no-2-perfume-website.git site
 Result: SUCCESS. Website repo still only 2 GLBs. Added scripts/push.sh (commit+push helper, token read from /tmp/.tok).
+
+### 5. Scaffold website (Step 1)
+$ git mv *.glb assets/models/... ; curl three@0.160.0 (three.module.js, GLTFLoader, BufferGeometryUtils, RoomEnvironment) -> js/vendor ; sed imports to relative
+$ curl Google Fonts Archivo italic (wdth125, 800-900) + Inter latin woff2 -> assets/fonts
+Result: SUCCESS. Push with token #1 -> 403 on website repo; token #2 works (SUCCESS).

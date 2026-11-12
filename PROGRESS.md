@@ -22,12 +22,13 @@ Extra chat instruction (Session #1): "Glb file 'no 2 perfume website er repo te 
 
 ## Status
 - Overall: IN PROGRESS
-- Current step: Step 1/8
+- Current step: Step 2/8
 - Last updated: 2026-11-12 17:40 (Asia/Dhaka) by Session #3
 
 ## Plan
 - [x] Step 0: Setup progress repo, analyse video, plan
-- [ ] Step 1: Website repo scaffold (index.html, css, js, vendor three.js, fonts, move GLBs to assets/models)  ← IN PROGRESS
+- [x] Step 1: Website repo scaffold (vendor three.js r160, fonts, GLBs moved to assets/models) — pushed to website repo
+- (Step 2 next)  ← IN PROGRESS
 - [ ] Step 2: Hero 3D carousel (drag/wheel, arc layout, active colour, ring light, bottom glow)
 - [ ] Step 3: Hero UI overlay (header, name, slider, hint) with exact sizes
 - [ ] Step 4: Scroll detail section (colour bg, features + icon nav, bottle rotation)
@@ -36,6 +37,7 @@ Extra chat instruction (Session #1): "Glb file 'no 2 perfume website er repo te 
 - [ ] Step 7: Final check, README, summary
 
 ## Done so far (details)
+- Step 1: website repo layout: index.html, css/{fonts,style}.css, js/{main.js,vendor/three.module.js,GLTFLoader.js,BufferGeometryUtils.js,RoomEnvironment.js}, assets/models/velora-eau-de-parfum.glb (black+gold), velora-blue-elegance.glb (blue+gold), assets/fonts/archivo-italic-var.woff2 (Archivo italic, wdth 125, wght 800-900 = heavy wide italic like video), inter-var.woff2.
 - Step 0: frames extracted (ffmpeg fps=2, crop of laptop screen), design breakdown above.
 
 ## NEXT STEP (exact instructions for the next agent)
@@ -45,7 +47,7 @@ Extra chat instruction (Session #1): "Glb file 'no 2 perfume website er repo te 
 - (none yet)
 
 ## Environment setup (run these on a fresh computer)
-- git clone both repos (token in URL, never in files). Website is static: serve with `python3 -m http.server` in website repo.
+- git clone both repos (token in URL, never in files). NOTE: the instruction file has TWO tokens: the 1st works for progress-save, the 2nd works for no-2-perfume-website. Website is static: serve with `python3 -m http.server` in website repo.
 
 ## External actions (not in code)
 - None.
