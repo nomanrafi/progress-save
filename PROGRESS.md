@@ -70,3 +70,4 @@ Extra chat instruction (Session #1): "Glb file 'no 2 perfume website er repo te 
 - Session #7 (2026-11-12 18:25): started, resuming step 6 (verify scroll sections, polish to match video 1:1).
 - Session #8 (2026-11-12 18:35): started, resuming step 6. Found Session #7 fixes (b) dt-based smoothing and (c) FAQ bottle move were NOT pushed (website HEAD 33cb076). Redoing them.
 - Session #9 (2026-11-12 18:40): started, resuming step 6 (verify 0815772 with screenshots, then polish + Step 7 README).
+- Session #10 (2026-11-12 18:50): started. Task already DONE (website 6cae0d0). User asked how to live-review the site. Re-verifying with screenshots; GitHub Pages NOT enabled (needs user's OK, it makes the site public).

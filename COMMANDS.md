@@ -50,3 +50,7 @@ Result: SUCCESS — website 6f0956d. Re-shooting 0,1.2,8.9 -> /tmp/s9b
 ### 12. Session #9 final
 $ write site/README.md ; push.sh site ; screenshots 0,1.2,8.9 -> output/preview/s9_polish.jpg
 Result: SUCCESS
+
+### 13. Session #10: clone both repos to /data/progress-save and /data/no-2-perfume-website, serve site on :8123
+$ git clone ...progress-save.git ; git clone ...no-2-perfume-website.git ; (cd no-2-perfume-website && python3 -m http.server 8123 &)
+Result: SUCCESS. website HEAD 6cae0d0.
