@@ -56,4 +56,5 @@ Extra chat instruction (Session #1): "Glb file 'no 2 perfume website er repo te 
 - Session #2 (2026-11-12): started, resuming from step 1 (website scaffold). Stopped by usage policy; scaffold again NOT pushed.
 - Session #3 (2026-11-12 17:45): started, resuming from step 1. Website repo still only GLBs. Later pushed to website repo: scaffold, index.html, style.css, WIP main.js (steps 2-5 untested) but did NOT update this PROGRESS file. Stopped while writing screenshot test script.
 - Session #4 (2026-11-12 17:52): started, resuming: test + fix WIP main.js (steps 2-5), then step 6 screenshot test. Got first hero screenshot; was tuning carousel layout when stopped (tuning NOT pushed).
-- Session #5 (2026-11-12 18:00): started, resuming step 6 (carousel layout tuning + test all sections).
+- Session #5 (2026-11-12 18:00): started, resuming step 6 (carousel layout tuning + test all sections). Pushed carousel tuning to website repo (c79e1a7). Stopped while fixing scroll smoothing / testing desktop.
+- Session #6 (2026-11-12 18:10): started, resuming step 6 (verify scroll sections, smooth scroll, match video sizes).
