@@ -1,0 +1,54 @@
+# PROGRESS
+
+## Task (copied exactly from the user)
+ei vdo te dekho website ta Kemon. mouse jokhon niche name tar interaction dekhso? mouse diye carousel kora jay , ar color change hoy niche, ar upore akta light ache dekhso aigula? ami tomake 3d glb file ditesi, tumi amake oirokom website baniye dao, ar choto akta task shesh korei sathe sathe repo te push kore dibe, mone rakhba same to same website chai vdo te jemon dekhesile. ei 2 ta file e ache amar kache, but tumi same to same premium website er motoi baniye diba. amar github er access token to diyechi, oikhane push korba simple choto choto task complete korar por e bar bar push korba, abar dilam token ar repo link: https://github.com/nomanrafi/no-2-perfume-website
+
+Extra chat instruction (Session #1): "Glb file 'no 2 perfume website er repo te ache'. Progress save korba progress repo te ar website er kaj korba no 2 perfume website er repo te. vdo te jeno text button agular size font size jemon dekhteso temon e thakbe, same to same hobe."
+
+## Two repos
+- PROGRESS repo (this one): https://github.com/nomanrafi/progress-save → logs, plan, previews.
+- WEBSITE repo: https://github.com/nomanrafi/no-2-perfume-website → all website code + the 2 GLB files.
+  - GLBs (in website repo root originally): Meshy_AI_Velora_Eau_de_Parfum_1112110251_texture.glb, Meshy_AI_Velora_Blue_Elegance_1112110455_texture.glb
+- Reference video (not in repo, 1.7MB mp4 in chat): "Ciao Energy" site recorded on a laptop. Contact sheets: output/preview/video_contact_sheet_*.jpg
+
+## Reference video breakdown (what must be copied 1:1)
+1. HERO: black bg, dark grey vignette. Products float in a horizontal arc carousel (centre product big + coloured, side ones dark/silhouette, tilted). Drag with mouse / wheel to rotate carousel.
+2. Top-centre: brand logo sitting on a glowing ring-light disc (hanging light) that lights the centre product from above.
+3. Header: top-left tiny "ON" sound toggle with bars; top-right "⁙ MENU" + small white pill button "CONTACT". Thin corner marks on viewport.
+4. Bottom-centre: product name in heavy italic condensed/wide caps, 2 lines (e.g. "KIWI / CONCOMBRE"), under it a thin gradient line slider with a dot (progress), tiny caps text "SCROLLER POUR DÉCOUVRIR". Bottom glow colour changes with active product.
+5. SCROLL → detail section: bg turns to product colour gradient, big tilted product on right/centre, left text: title heavy italic + paragraph; right side vertical column of 4 round icons (feature nav). Scrolling steps through features (small tag pill + title + text), product rotates.
+6. Big blurred statement text ("ZERO BULLSHIT") with bright colour flash.
+7. Product goes back to dark bg, then "FOIRE AUX QUESTIONS" huge heavy italic title + FAQ accordion list (thin lines, chevrons).
+
+## Status
+- Overall: IN PROGRESS
+- Current step: Step 1/8
+- Last updated: 2026-11-12 17:40 (Asia/Dhaka) by Session #1
+
+## Plan
+- [x] Step 0: Setup progress repo, analyse video, plan
+- [ ] Step 1: Website repo scaffold (index.html, css, js, vendor three.js, fonts, move GLBs to assets/models)  ← IN PROGRESS
+- [ ] Step 2: Hero 3D carousel (drag/wheel, arc layout, active colour, ring light, bottom glow)
+- [ ] Step 3: Hero UI overlay (header, name, slider, hint) with exact sizes
+- [ ] Step 4: Scroll detail section (colour bg, features + icon nav, bottle rotation)
+- [ ] Step 5: Statement + FAQ section
+- [ ] Step 6: Screenshot test (headless chromium) + polish
+- [ ] Step 7: Final check, README, summary
+
+## Done so far (details)
+- Step 0: frames extracted (ffmpeg fps=2, crop of laptop screen), design breakdown above.
+
+## NEXT STEP (exact instructions for the next agent)
+- See Plan; work in website repo /data/no-2-perfume-website.
+
+## Problems / Notes
+- (none yet)
+
+## Environment setup (run these on a fresh computer)
+- git clone both repos (token in URL, never in files). Website is static: serve with `python3 -m http.server` in website repo.
+
+## External actions (not in code)
+- None.
+
+## Session History
+- Session #1: started new task.
