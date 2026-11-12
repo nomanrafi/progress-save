@@ -20,3 +20,9 @@ Result: SUCCESS. Website repo still only 2 GLBs. Added scripts/push.sh (commit+p
 $ git mv *.glb assets/models/... ; curl three@0.160.0 (three.module.js, GLTFLoader, BufferGeometryUtils, RoomEnvironment) -> js/vendor ; sed imports to relative
 $ curl Google Fonts Archivo italic (wdth125, 800-900) + Inter latin woff2 -> assets/fonts
 Result: SUCCESS. Push with token #1 -> 403 on website repo; token #2 works (SUCCESS).
+
+### 6. Session #4: re-clone both repos, serve site, screenshot test
+$ git clone ... progress ; git clone ... site ; (cd site && python3 -m http.server 8123 &)
+$ node progress/scripts/shot.js /tmp/s 0      (Playwright + /usr/local/bin/chromium, swiftshader WebGL, 1440x900)
+Result: SUCCESS — site loads, GLBs render, carousel visible. Only a 404 (favicon). Preview: output/preview/s4_hero_v1.png
+Observed: bottles too big & overlapping at edges vs video (video: ~7 small items spread across width, centre one higher under ring light).
