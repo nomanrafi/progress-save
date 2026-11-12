@@ -23,7 +23,7 @@ Extra chat instruction (Session #1): "Glb file 'no 2 perfume website er repo te 
 ## Status
 - Overall: IN PROGRESS
 - Current step: Step 1/8
-- Last updated: 2026-11-12 17:40 (Asia/Dhaka) by Session #2
+- Last updated: 2026-11-12 17:40 (Asia/Dhaka) by Session #3
 
 ## Plan
 - [x] Step 0: Setup progress repo, analyse video, plan
@@ -52,4 +52,5 @@ Extra chat instruction (Session #1): "Glb file 'no 2 perfume website er repo te 
 
 ## Session History
 - Session #1: started new task. Did step 0 only (stopped by usage limit while scaffolding; scaffold was NOT pushed).
-- Session #2 (2026-11-12): started, resuming from step 1 (website scaffold).
+- Session #2 (2026-11-12): started, resuming from step 1 (website scaffold). Stopped by usage policy; scaffold again NOT pushed.
+- Session #3 (2026-11-12 17:45): started, resuming from step 1. Website repo still only GLBs.

@@ -11,3 +11,7 @@ Result: SUCCESS, 25 frames → output/preview/video_contact_sheet_1/2.jpg
 ### 3. Session #2: re-clone both repos
 $ git clone https://x-access-token:<TOKEN>@github.com/nomanrafi/progress-save.git ; same for no-2-perfume-website
 Result: SUCCESS. Website repo still only has 2 GLBs (previous scaffold was lost).
+
+### 4. Session #3: re-clone both repos into /data/progress and /data/site
+$ git clone https://x-access-token:<TOKEN>@github.com/nomanrafi/progress-save.git progress ; ...no-2-perfume-website.git site
+Result: SUCCESS. Website repo still only 2 GLBs. Added scripts/push.sh (commit+push helper, token read from /tmp/.tok).
