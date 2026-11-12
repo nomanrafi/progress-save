@@ -34,3 +34,7 @@ Result: SUCCESS. Preview output/preview/s7_sections.jpg. Found: blank back of bo
 ### 8. Session #8: re-clone to /data/project and /data/site, apply dt-based smoothing fix
 $ edit site/js/main.js (k(rate,dt) helper; pos/mouse/scroll smoothing; max 2-screen lag; FAQ bottle x1.05 y0.55 z0.6 sc0.9) ; scripts/push.sh /data/site "..."
 Result: SUCCESS — website repo 0815772.
+
+### 9. Session #9: clone to /data/project and /data/site (token #2 for site remote)
+$ git clone ...progress-save.git project ; git clone ...no-2-perfume-website.git site
+Result: SUCCESS. site HEAD 0815772.
