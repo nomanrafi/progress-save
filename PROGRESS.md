@@ -22,18 +22,17 @@ Extra chat instruction (Session #1): "Glb file 'no 2 perfume website er repo te 
 
 ## Status
 - Overall: IN PROGRESS
-- Current step: Step 2/8
+- Current step: Step 6/8 (test + polish)
 - Last updated: 2026-11-12 17:40 (Asia/Dhaka) by Session #3
 
 ## Plan
 - [x] Step 0: Setup progress repo, analyse video, plan
 - [x] Step 1: Website repo scaffold (vendor three.js r160, fonts, GLBs moved to assets/models) — pushed to website repo
-- (Step 2 next)  ← IN PROGRESS
-- [ ] Step 2: Hero 3D carousel (drag/wheel, arc layout, active colour, ring light, bottom glow)
-- [ ] Step 3: Hero UI overlay (header, name, slider, hint) with exact sizes
-- [ ] Step 4: Scroll detail section (colour bg, features + icon nav, bottle rotation)
-- [ ] Step 5: Statement + FAQ section
-- [ ] Step 6: Screenshot test (headless chromium) + polish
+- [x] Step 2: Hero 3D carousel (code written in js/main.js, untested)
+- [x] Step 3: Hero UI overlay (index.html + css/style.css, vw sizes)
+- [x] Step 4: Scroll detail section (code written, untested)
+- [x] Step 5: Statement + FAQ section (code written, untested)
+- [ ] Step 6: Screenshot test (headless chromium) + polish  ← IN PROGRESS (Session #4)
 - [ ] Step 7: Final check, README, summary
 
 ## Done so far (details)
