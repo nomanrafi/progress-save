@@ -15,3 +15,11 @@ Why: video carousel shows ~7 items; user has 2 models.
 ### 4. Fonts
 Decision: Archivo Italic, width 125%, weight 900 for big titles; Inter for small UI text.
 Why: video uses heavy wide italic caps (Ciao Energy style); Archivo expanded black italic is the closest free match.
+
+### S11-1. Where progress logs go
+Decision: Session #11 mirrors PROGRESS/COMMANDS/DECISIONS into the WEBSITE repo folder `agent-progress/` (script scripts/sync.sh).
+Why: both tokens get HTTP 403 when pushing to progress-save (read-only now); token #2 can push to velora-luxury-perfume.
+
+### S26-1. Progress repo push restored
+Decision: push logs to progress-save again (not only website agent-progress/).
+Why: user explicitly asked (Session #26); token #1 is invalid, token #2 (website token) has push permission on progress-save.

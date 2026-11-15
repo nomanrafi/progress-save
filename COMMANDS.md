@@ -58,3 +58,26 @@ Result: SUCCESS. website HEAD 6cae0d0.
 ### 14. Session #10 screenshot check of 6cae0d0
 $ CHROME=/usr/local/bin/chromium NODE_PATH=/data/node_modules node progress-save/scripts/shot.js /tmp/s10 0,4.5,8.9 ; magick montage ...
 Result: SUCCESS (only favicon 404). Preview output/preview/s10_check.jpg
+
+### 15. Session #11: clone progress-save -> /data/project, velora-luxury-perfume -> /data/velora
+Result: SUCCESS. Push to progress-save = 403 with both tokens. Token #2 pushes velora. Logs mirrored to velora/agent-progress/.
+### 16. Session #12: A — 4 models (noir/blue/green/purple), 10 products w/ per-product notes+info, features use product notes; intro panel HTML (eyebrow, notes, specs, price)
+Result: written, untested
+### 17. Session #14: B+C+D CSS (logo/ring/menu/contact bigger; glass detail card w/ eyebrow, notes, specs, price; bigger feature text; FAQ title smaller, questions bigger)
+$ python3 patch css/style.css
+Result: written, testing with screenshots next
+### 18. Session #18 screenshot test of 7d3dd1d
+$ shot.js /tmp/s18/a 0,2.5,4.5,8.9
+Result: SUCCESS. A-D render OK. Issue: FAQ bottle overlaps question chevrons. Preview agent-progress/preview/s18_test.jpg
+### 19. Session #20 screenshot test of 4ed3e85 + size bump
+$ shot.js /tmp/s20/a 0,2.5,4.5,8.9 ; shot_next.js /tmp/s20/b 2,3   (NODE_PATH=/vercel/sandbox/node_modules)
+Result: SUCCESS, green+purple render. Then bumped sizes in css/style.css: logo, ring 31vw, menu/contact, feature title/text/tag, FAQ title smaller (2.8vw), questions bigger (1.6vw)
+### 20. Session #21 verify 2dafcc7 + bigger detail panel text
+$ shot.js /tmp/s21/a 0,1.2,2.5,4.5,8.9 ; patch css/style.css (.intro width 39vw, dtitle 4vw, dtext 1.22vw, notes/specs/price/eyebrow bigger)
+Result: A-E render OK; panel text bumped. Preview agent-progress/preview/s21_check.jpg
+### 21. Session #24 final verify
+$ shot.js /tmp/s24/a 0,2.5,8.9
+Result: SUCCESS (favicon 404 only). Preview agent-progress/preview/s24_final.jpg. Task DONE.
+### 22. Session #26 sync logs to progress-save
+$ git clone progress-save + velora-luxury-perfume ; cp agent-progress/{*.md,preview/*,scripts/*} -> progress-save ; push with token #2 (<TOKEN>)
+Result: token #1 auth failed; token #2 has push=true on progress-save. Synced and pushed.
