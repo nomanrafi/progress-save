@@ -33,7 +33,7 @@ Extra chat instruction (Session #1): "Glb file 'no 2 perfume website er repo te 
 - [x] E: screenshot verify, push, log
 
 ## Status
-- Overall: DONE (Session #25 F1/F2 done, website HEAD 1d21501; Session #11 new requests A-E done & verified by Session #24, preview agent-progress/preview/s24_final.jpg)
+- Overall: IN PROGRESS — Session #27 MOBILE task (see bottom). Earlier: DONE (Session #25 F1/F2 done, website HEAD 1d21501; Session #11 new requests A-E done & verified by Session #24, preview agent-progress/preview/s24_final.jpg)
 - Current step: done
 - Last updated: 2026-11-15 12:15 (Asia/Dhaka) by Session #26
 
@@ -108,3 +108,16 @@ Extra chat instruction (Session #1): "Glb file 'no 2 perfume website er repo te 
 - Session #25 (2026-11-15 12:00): verified F1+F2 (ring/logo/menu/contact/FAQ smaller, carousel bigger, detail panel smaller) with screenshots agent-progress/preview/s25_F_verify.jpg. All OK. Task DONE.
 
 - Session #26 (2026-11-15 12:15): user asked to save progress to progress-save. Synced logs, scripts and previews (s18/s21/s24/s25) from website repo agent-progress/ into this repo (sessions #11-#25 were never pushed here; prior local commit 876e98 was lost with old workspace). Website token got 403 here; user then gave a new progress-save token in chat and push succeeded. Task status: DONE, nothing pending. From now on push logs directly to progress-save.
+
+## NEW TASK (Session #27, 2026-11-15 12:20) — user chat request (Bangla, copied exactly)
+"akhon sudu mobile version er kaj korba, desktop version a touch o korba na, just mobile version a change korba. Dekho koyekta image diyechi, mobile version a kemon jeno website ta slow kaj kore, product carousel slow ar atke atke jay, erpor uporer light box, menu, contact aksathe mishe gese, ar carousel product gula onek choto, mobile version er carousel er product gula arektu boro koro. Niche detail section er sathe product mishe gese. Niche scroll smoothly hoy na, atke atke jay."
+- Screenshots (phone ~390px wide): logo overlaps MENU; ring light under header; carousel bottles small; detail card text drawn on top of the big bottle; FAQ bottle over questions; laggy carousel + scroll.
+- RULE: desktop must stay byte-identical in behaviour -> only @media (max-width:760px) CSS and `isMobile` branches in JS.
+### Session #27 plan
+- [ ] M1: header layout mobile (logo/ring centred below, MENU/CONTACT smaller, no overlap)
+- [ ] M2: performance on mobile (pixelRatio cap, no shadows/AA, lighter smoothing, passive touch)
+- [ ] M3: carousel bottles bigger on mobile
+- [ ] M4: detail section: bottle moved to top / card below, no overlap; FAQ bottle away from questions
+- [ ] M5: smooth scroll on mobile (native scroll, no heavy lerp lag)
+- [ ] M6: screenshot verify at 390x844, push, log
+- Session #27 (12:20): started.
