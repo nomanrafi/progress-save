@@ -1,0 +1,216 @@
+From bfa00a901efe8a42be771ae11b5f135facc1e74c Mon Sep 17 00:00:00 2001
+From: AI Agent <ai-agent@example.com>
+Date: Sun, 15 Nov 2026 06:54:18 +0000
+Subject: [PATCH] M1-M5 WIP: mobile-only header/perf/carousel/detail/scroll
+ changes (untested)
+
+---
+ css/style.css | 46 ++++++++++++++++++++++++++++++++++++++++++----
+ js/main.js    | 44 +++++++++++++++++++++++++++++---------------
+ 2 files changed, 71 insertions(+), 19 deletions(-)
+
+diff --git a/css/style.css b/css/style.css
+index 1e980c4..10767db 100644
+--- a/css/style.css
++++ b/css/style.css
+@@ -143,8 +143,46 @@ body.touch .cursor{display:none}
+ .load-bar i{display:block;height:100%;width:0;background:#fff;transition:width .3s}
+ 
+ @media (max-width:760px){
+-  .intro,.feats{left:var(--pad);right:var(--pad);top:auto;bottom:10vh;transform:none;width:auto}
+-  .intro{padding:18px}.specs{grid-template-columns:repeat(2,1fr)}.feats{bottom:22vh}
+-  .arrow-l{left:6vw}.arrow-r{right:6vw}
+-  .pname{font-size:7.2vw}.slider{width:70vw}
++  /* MOBILE ONLY — desktop rules above are untouched */
++  /* header: sound left, MENU + CONTACT right (smaller); logo + ring light centred BELOW the row so nothing overlaps */
++  .top{height:56px;padding:0 16px}
++  .sound{font-size:10px;gap:6px}
++  .nav{gap:12px}
++  .menu{font-size:10px;gap:6px}
++  .dots{grid-template-columns:repeat(2,3px);gap:2px}.dots i{width:3px;height:3px}
++  .contact{font-size:10px;padding:8px 12px;border-radius:4px}
++  .ring{top:50px;width:62vw}
++  .logo{top:64px}
++  .logo-main{font-size:22px}.logo-sub{font-size:9px;margin-top:4px}
++  /* hero */
++  .arrow-l{left:4vw}.arrow-r{right:4vw}
++  .hero-bottom{bottom:9vh}
++  .pname{font-size:7.6vw}.slider{width:70vw}
++  .glow{filter:blur(18px)}
++  /* detail: card sits in the bottom part, bottle stays in the top part (see MOB_* in main.js) */
++  .intro,.feats{left:14px;right:14px;top:auto;width:auto}
++  .intro{bottom:70px;transform:none;padding:16px;backdrop-filter:none;-webkit-backdrop-filter:none;background:linear-gradient(160deg,rgba(18,18,20,.72),rgba(10,10,12,.55));box-shadow:0 14px 34px rgba(0,0,0,.35)}
++  .eyebrow{font-size:9px;margin-bottom:8px}
++  .dtitle{font-size:30px}
++  .dtext{font-size:12.5px;line-height:1.45;margin-top:8px}
++  .notes{margin-top:10px;gap:4px}.notes li{font-size:11.5px;padding-bottom:4px}
++  .specs{grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
++  .specs dt{font-size:8px;letter-spacing:.12em}.specs dd{font-size:11px}
++  .dbuy{margin-top:10px;padding-top:9px}.price{font-size:22px}.size{font-size:8px}
++  .feats{bottom:96px;height:auto}
++  .feat{top:auto;bottom:0;transform:translateY(24px)}
++  .feat.on{transform:none}
++  .feat h3{font-size:30px}
++  .feat p{font-size:14px;margin-top:8px}
++  .icons{top:auto;bottom:22px;right:14px;transform:none;flex-direction:row;gap:10px}
++  .icons li{width:34px;height:34px}
++  .dline{left:14px;bottom:38px;width:90px}
++  .statement{font-size:17vw;filter:blur(3px)}
++  /* FAQ */
++  .faq{padding:20vh 18px 10vh}
++  .faq-title{font-size:24px}
++  .faq-list{width:100%;margin-top:28px}
++  .qa button{font-size:15px;padding:16px 0}
++  .qa .ans p{font-size:13px}
++  .foot{font-size:8px;padding:16px}
+ }
+diff --git a/js/main.js b/js/main.js
+index 3a37551..c7cd5b6 100644
+--- a/js/main.js
++++ b/js/main.js
+@@ -65,11 +65,15 @@ const N = PRODUCTS.length;
+ const wrap = (o) => { o = ((o % N) + N) % N; return o > N / 2 ? o - N : o; };
+ const isTouch = matchMedia('(pointer:coarse)').matches;
+ if (isTouch) document.body.classList.add('touch');
++// MOBILE ONLY (<=760px wide): every `isMobile` / `mob()` branch below changes nothing on desktop
++const mob = () => innerWidth <= 760;
++const isMobile = mob();
++if (isMobile) document.body.classList.add('mob');
+ 
+ /* ------------------------------------------------------------------ renderer */
+ const canvas = $('#gl');
+-const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
+-renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
++const renderer = new THREE.WebGLRenderer({ canvas, antialias: !isMobile, alpha: true, powerPreference: 'high-performance' });
++renderer.setPixelRatio(Math.min(devicePixelRatio, isMobile ? 1.5 : 2));
+ renderer.outputColorSpace = THREE.SRGBColorSpace;
+ renderer.toneMapping = THREE.ACESFilmicToneMapping;
+ renderer.toneMappingExposure = 1.05;
+@@ -156,7 +160,7 @@ $('#icons').innerHTML = FEATURES.map((f, i) => `<li data-i="${i}" aria-label="${
+ $('#faqList').innerHTML = FAQ.map(([q, a]) => `<div class="qa"><button>${q}</button><div class="ans"><div><p>${a}</p></div></div></div>`).join('');
+ document.querySelectorAll('.qa button').forEach((b) => b.addEventListener('click', () => b.parentElement.classList.toggle('open')));
+ document.querySelectorAll('#icons li').forEach((li) => li.addEventListener('click', () => {
+-  scrollTo({ top: (2 + +li.dataset.i + 0.5) * innerHeight, behavior: 'smooth' });
++  scrollTo({ top: (2 + +li.dataset.i + 0.5) * (mob() ? viewH : innerHeight), behavior: 'smooth' });
+ }));
+ 
+ /* ------------------------------------------------------------------ input */
+@@ -169,7 +173,7 @@ addEventListener('pointermove', (e) => {
+   cursor.classList.toggle('drag', inHero() && !overUI && e.clientY > innerHeight * .18 && e.clientY < innerHeight * .8);
+   if (dragging) {
+     const dx = e.clientX - lastX; lastX = e.clientX; dragMoved += Math.abs(dx);
+-    const d = -dx / (innerWidth * 0.14);
++    const d = -dx / (innerWidth * (mob() ? 0.3 : 0.14));
+     target += d; vel = d;
+   }
+ });
+@@ -207,7 +211,10 @@ canvas.addEventListener('click', (e) => {
+   const idx = items.findIndex((it) => { let o = hit.object; while (o) { if (o === it.pivot) return true; o = o.parent; } return false; });
+   if (idx >= 0) target = Math.round(target) + wrap(idx - Math.round(target));
+ });
+-addEventListener('scroll', () => { scrollS = scrollY / innerHeight; }, { passive: true });
++let viewH = innerHeight; // mobile: = CSS 100vh (stable while the address bar hides/shows)
++const measureVH = () => { viewH = mob() ? ($('#spacer').offsetHeight / 8 || innerHeight) : innerHeight; };
++measureVH();
++addEventListener('scroll', () => { scrollS = scrollY / (isMobile ? viewH : innerHeight); }, { passive: true });
+ 
+ // sound toggle (soft ambient pad generated with WebAudio — no audio file needed)
+ let actx, gain, soundOn = true;
+@@ -235,6 +242,7 @@ const heroUI = $('#heroUI'), detailUI = $('#detailUI'), ring = $('#ring'), intro
+ const bgColor = $('.bg-color'), bgFlash = $('.bg-flash'), statement = $('#statement'), dline = $('#dline');
+ const feats = [...document.querySelectorAll('.feat')], icons = [...document.querySelectorAll('#icons li')];
+ let featOn = -1;
++const MOB_DY = 1.05, MOB_DZ = 2.2, MOB_DS = 1.3; // mobile detail pose: bottle in the top half, card below
+ const tmpDark = new THREE.Color(0x0b0b0d), white = new THREE.Color(1, 1, 1);
+ 
+ function layout(t, dt) {
+@@ -245,17 +253,18 @@ function layout(t, dt) {
+   const p3 = ease(range(s, 6.6, 7.8));       // detail -> dark (faq)
+   const wide = innerWidth / innerHeight;
+   const narrow = wide < 1;
++  const M = mob();
+ 
+   // carousel item placement
+   items.forEach((it, i) => {
+     const o = wrap(i - pos);
+     const ao = Math.abs(o);
+-    const sp = narrow ? 0.95 : 1.28;
++    const sp = M ? 1.22 : narrow ? 0.95 : 1.28;
+     // centre item sits higher (under the ring light), side items spread evenly across the width
+     let x = Math.sign(o) * (Math.min(ao, 1) * (sp + 0.12) + Math.max(0, ao - 1) * sp);
+-    let y = lerp(0.32, -0.12 + Math.sin(it.seed * 2.3) * 0.12, clamp(ao)) + Math.sin(t * 0.9 + it.seed) * 0.04;
++    let y = lerp(M ? 0.2 : 0.32, -0.12 + Math.sin(it.seed * 2.3) * 0.12, clamp(ao)) + Math.sin(t * 0.9 + it.seed) * 0.04;
+     let z = -Math.pow(ao, 1.1) * 0.55;
+-    let sc = lerp(1.36, 0.96, clamp(ao));
++    let sc = M ? lerp(1.85, 1.2, clamp(ao)) : lerp(1.36, 0.96, clamp(ao));
+     let tiltZ = -0.24 + (ao > 0.5 ? Math.sin(it.seed * 3.1) * 0.12 : 0);
+     let rotY = -o * 0.32 + Math.sin(t * 0.5 + it.seed) * 0.08;
+     // mouse parallax on active
+@@ -266,20 +275,21 @@ function layout(t, dt) {
+       // detail pose
+       const dx = narrow ? 0.0 : lerp(0.75, 0.15, ease(pF));
+       x = lerp(x, dx, p1);
+-      y = lerp(y, narrow ? 0.5 : -0.1, p1);
+-      z = lerp(z, 3.6, p1);
+-      sc = lerp(sc, 1.55, p1);
++      y = lerp(y, M ? MOB_DY : narrow ? 0.5 : -0.1, p1);
++      z = lerp(z, M ? MOB_DZ : 3.6, p1);
++      sc = lerp(sc, M ? MOB_DS : 1.55, p1);
+       tiltZ = lerp(tiltZ, -0.42 + pF * 0.42, p1);
+       rotY = lerp(rotY, Math.sin(pF * Math.PI * 3) * 0.55 + mouse.sx * 0.15, p1); // keep label facing camera (full spin showed blank back)
+       // back to dark: product floats right, behind FAQ title
+       x = lerp(x, narrow ? 0 : 2.65, p3); y = lerp(y, 0.15, p3); z = lerp(z, 0.6, p3);
+       sc = lerp(sc, 0.9, p3); tiltZ = lerp(tiltZ, -0.12, p3); rotY = lerp(rotY, 0.3, p3);
++      if (M) y += p3 * 4.5; // mobile: bottle floats up out of view so it never covers the FAQ
+     } else {
+       y -= p1 * (2.6 + ao * 0.4); z -= p1 * 2; sc *= 1 - p1 * 0.3;
+     }
+     it.pivot.position.set(x, y, z);
+     it.pivot.scale.setScalar(sc);
+-    it.pivot.visible = isActive || p1 < 0.99;
++    it.pivot.visible = M ? (isActive ? p3 < 0.99 : p1 < 0.99 && ao < 2.6) : (isActive || p1 < 0.99);
+     it.tilt.rotation.z = tiltZ;
+     it.spin.rotation.y = BASE_ROT_Y + rotY;
+     // darken side products (silhouettes like the reference)
+@@ -301,7 +311,7 @@ function layout(t, dt) {
+   const dOp = range(s, .6, 1) * (1 - range(s, 6.6, 7.1));
+   detailUI.style.opacity = dOp; detailUI.style.pointerEvents = dOp > .5 ? 'auto' : 'none';
+   intro.style.opacity = 1 - range(s, 1.5, 1.9);
+-  intro.style.transform = `translateY(calc(-50% - ${range(s, 1.5, 1.9) * 30}px))`;
++  intro.style.transform = M ? `translateY(${-range(s, 1.5, 1.9) * 30}px)` : `translateY(calc(-50% - ${range(s, 1.5, 1.9) * 30}px))`;
+   const fi = s < 1.9 ? -1 : Math.min(3, Math.floor((s - 1.9) / 1.0));
+   if (fi !== featOn) { featOn = fi; feats.forEach((f, i) => f.classList.toggle('on', i === fi)); icons.forEach((f, i) => f.classList.toggle('on', i === fi)); }
+   dline.style.setProperty('--p', pF.toFixed(3));
+@@ -309,7 +319,7 @@ function layout(t, dt) {
+   bgFlash.style.opacity = flash * 0.85;
+   statement.style.opacity = flash;
+   statement.style.transform = `scale(${lerp(1.15, 0.95, pS)})`;
+-  statement.style.filter = `blur(${lerp(14, 3, flash)}px)`;
++  if (!M) statement.style.filter = `blur(${lerp(14, 3, flash)}px)`; // mobile: animated blur is too heavy
+   feats.forEach((f) => (f.style.visibility = pS > .35 ? 'hidden' : 'visible'));
+ }
+ 
+@@ -322,7 +332,7 @@ function frame() {
+   const a = ((Math.round(pos) % N) + N) % N;
+   if (a !== active && smoothS < 0.3) { active = a; setAccent(active); }
+   mouse.sx += (mouse.x - mouse.sx) * k(0.06, dt); mouse.sy += (mouse.y - mouse.sy) * k(0.06, dt);
+-  smoothS += (scrollS - smoothS) * k(0.12, dt);
++  smoothS += (scrollS - smoothS) * k(isMobile ? 0.3 : 0.12, dt); // mobile: follow native scroll closely
+   if (Math.abs(scrollS - smoothS) > 2) smoothS = scrollS - Math.sign(scrollS - smoothS) * 2; // never lag more than 2 screens
+   // slider dot: position within collection
+   const prog = ((pos % N) + N) % N / (N - 1);
+@@ -331,7 +341,11 @@ function frame() {
+   renderer.render(scene, camera);
+   requestAnimationFrame(frame);
+ }
++let lastW = -1, lastH = -1;
+ function resize() {
++  // mobile: ignore height-only changes from the address bar hiding/showing (re-allocating the canvas = stutter)
++  if (isMobile && innerWidth === lastW && Math.abs(innerHeight - lastH) < 200 && renderer.domElement.width) return;
++  lastW = innerWidth; lastH = innerHeight; measureVH();
+   renderer.setSize(innerWidth, innerHeight, false);
+   camera.aspect = innerWidth / innerHeight;
+   camera.fov = camera.aspect < 1 ? 42 : 26;
+-- 
+2.49.0
+

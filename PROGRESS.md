@@ -125,3 +125,4 @@ Extra chat instruction (Session #1): "Glb file 'no 2 perfume website er repo te 
 - Session #29 (12:30): started, resuming M1-M6 (none pushed by #27/#28; website HEAD 1d21501). Clone dirs /data/project + /data/velora.
 - Session #30 (12:36): started, resuming M1-M6 (none pushed; website HEAD 1d21501). Clone dirs /data/project + /data/site. Plan: keep tool calls few, push code early.
 - Session #31 (12:52): started, resuming M1-M6 (none pushed; website HEAD 1d21501). Clone dirs /data/project + /data/velora.
+- Session #31: wrote M1-M5 code (website local commit bfa00a9). Push to website repo = 403 (chat token is progress-save only). Patch saved: output/0001-*.patch, full files src/velora-mobile/{main.js,style.css} -> apply with `git am output/0001-*.patch` in website repo. NEXT: M6 screenshots 390x844.
