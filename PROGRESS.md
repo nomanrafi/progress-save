@@ -123,3 +123,4 @@ Extra chat instruction (Session #1): "Glb file 'no 2 perfume website er repo te 
 - Session #27 (12:20): started.
 - Session #28 (12:25): started, resuming M1-M6 (none done; website HEAD 1d21501). Clone dirs /data/project + /data/velora.
 - Session #29 (12:30): started, resuming M1-M6 (none pushed by #27/#28; website HEAD 1d21501). Clone dirs /data/project + /data/velora.
+- Session #30 (12:36): started, resuming M1-M6 (none pushed; website HEAD 1d21501). Clone dirs /data/project + /data/site. Plan: keep tool calls few, push code early.
