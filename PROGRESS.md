@@ -33,7 +33,7 @@ Extra chat instruction (Session #1): "Glb file 'no 2 perfume website er repo te 
 - [x] E: screenshot verify, push, log
 
 ## Status
-- Overall: IN PROGRESS — Session #27 MOBILE task (see bottom). Earlier: DONE (Session #25 F1/F2 done, website HEAD 1d21501; Session #11 new requests A-E done & verified by Session #24, preview agent-progress/preview/s24_final.jpg)
+- Overall: DONE — Session #33 pushed mobile M1-M6 (website b5b0e22). Earlier: DONE (Session #25 F1/F2 done, website HEAD 1d21501; Session #11 new requests A-E done & verified by Session #24, preview agent-progress/preview/s24_final.jpg)
 - Current step: done
 - Last updated: 2026-11-15 12:15 (Asia/Dhaka) by Session #26
 
@@ -128,3 +128,4 @@ Extra chat instruction (Session #1): "Glb file 'no 2 perfume website er repo te 
 - Session #31: wrote M1-M5 code (website local commit bfa00a9). Push to website repo = 403 (chat token is progress-save only). Patch saved: output/0001-*.patch, full files src/velora-mobile/{main.js,style.css} -> apply with `git am output/0001-*.patch` in website repo. NEXT: M6 screenshots 390x844.
 - Session #32 (12:57): started. Applied output/0001 patch to website clone /data/site (local 0a42afc). Website push still 403 with chat token. Doing M6 test + fixes; will save patches here.
 - Session #32: M6 verified at 390x844 (output/preview/s32_mobile_*.jpg): header no overlap, bigger carousel, detail bottle above card, FAQ clear. Tweak MOB_DY 1.22/MOB_DS 1.2. Website commits local only (403). NEXT: get a token with write access to velora-luxury-perfume, then in website repo at 1d21501: `git am output/000*.patch` and push. Code DONE.
+- Session #33 (13:30): started. Applied output/0001+0002 patches to website repo and PUSHED with the website token (velora-luxury-perfume main = b5b0e22). Verified 390x844 (output/preview/s33_mobile.jpg): header no overlap, bigger carousel, detail bottle above card, FAQ clear. MOBILE task M1-M6 DONE. Desktop untouched (only @media max-width:760px + isMobile branches).

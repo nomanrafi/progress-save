@@ -81,3 +81,9 @@ Result: SUCCESS (favicon 404 only). Preview agent-progress/preview/s24_final.jpg
 ### 22. Session #26 sync logs to progress-save
 $ git clone progress-save + velora-luxury-perfume ; cp agent-progress/{*.md,preview/*,scripts/*} -> progress-save ; push with token #2 (<TOKEN>)
 Result: token #1 auth failed; token #2 has push=true on progress-save. Synced and pushed.
+
+### S33-1. Apply mobile patches + push website
+$ git am output/000*.patch && git push https://x-access-token:<TOKEN>@github.com/nomanrafi/velora-luxury-perfume.git HEAD:main
+Result: SUCCESS — website main = b5b0e22
+### S33-2. Mobile screenshots
+$ node scripts/shot_mobile.js /tmp/m 0,1.2,2.5,7.6  -> output/preview/s33_mobile.jpg  Result: OK
