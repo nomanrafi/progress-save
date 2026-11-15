@@ -67,7 +67,7 @@ Extra chat instruction (Session #1): "Glb file 'no 2 perfume website er repo te 
 - (none yet)
 
 ## Environment setup (run these on a fresh computer)
-- git clone both repos (token in URL, never in files). NOTE (updated Session #26): the instruction file has TWO tokens. The 1st (GITHUB_TOKEN line) is now INVALID (auth fails). The 2nd (website token) has push access to BOTH velora-luxury-perfume and progress-save — use it for both. Website is static: serve with `python3 -m http.server` in website repo.
+- git clone both repos (token in URL, never in files). NOTE (updated Session #26): the instruction file has TWO tokens. The 1st (GITHUB_TOKEN line) is now INVALID (auth fails). The 2nd (website token) works ONLY for velora-luxury-perfume (403 on progress-save). Session #26: user gave a NEW token in chat for progress-save (not stored here; ask the user / update instruction file section 0). Website is static: serve with `python3 -m http.server` in website repo.
 
 ## External actions (not in code)
 - None.
@@ -107,4 +107,4 @@ Extra chat instruction (Session #1): "Glb file 'no 2 perfume website er repo te 
 
 - Session #25 (2026-11-15 12:00): verified F1+F2 (ring/logo/menu/contact/FAQ smaller, carousel bigger, detail panel smaller) with screenshots agent-progress/preview/s25_F_verify.jpg. All OK. Task DONE.
 
-- Session #26 (2026-11-15 12:15): user asked to save progress to progress-save. Synced logs, scripts and previews (s18/s21/s24/s25) from website repo agent-progress/ into this repo (sessions #11-#25 were never pushed here; prior local commit 876e98 was lost with old workspace). Pushed with website token (has write access here). Task status: DONE, nothing pending. From now on push logs directly to progress-save.
+- Session #26 (2026-11-15 12:15): user asked to save progress to progress-save. Synced logs, scripts and previews (s18/s21/s24/s25) from website repo agent-progress/ into this repo (sessions #11-#25 were never pushed here; prior local commit 876e98 was lost with old workspace). Website token got 403 here; user then gave a new progress-save token in chat and push succeeded. Task status: DONE, nothing pending. From now on push logs directly to progress-save.

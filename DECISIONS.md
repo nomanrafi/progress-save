@@ -22,4 +22,4 @@ Why: both tokens get HTTP 403 when pushing to progress-save (read-only now); tok
 
 ### S26-1. Progress repo push restored
 Decision: push logs to progress-save again (not only website agent-progress/).
-Why: user explicitly asked (Session #26); token #1 is invalid, token #2 (website token) has push permission on progress-save.
+Why: user explicitly asked (Session #26); token #1 is invalid, token #2 got 403 here; user provided a new progress-save token (Session #26).
