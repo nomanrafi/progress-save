@@ -1,7 +1,7 @@
-From bfa00a901efe8a42be771ae11b5f135facc1e74c Mon Sep 17 00:00:00 2001
+From 0a42afcc921326814396081bd46c5aa5c19f23d8 Mon Sep 17 00:00:00 2001
 From: AI Agent <ai-agent@example.com>
 Date: Sun, 15 Nov 2026 06:54:18 +0000
-Subject: [PATCH] M1-M5 WIP: mobile-only header/perf/carousel/detail/scroll
+Subject: [PATCH 1/2] M1-M5 WIP: mobile-only header/perf/carousel/detail/scroll
  changes (untested)
 
 ---

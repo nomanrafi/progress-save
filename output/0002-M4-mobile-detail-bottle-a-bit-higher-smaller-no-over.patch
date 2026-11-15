@@ -1,0 +1,26 @@
+From 3ccdd5da652c5e65c8b5f19dda167ecc725398a4 Mon Sep 17 00:00:00 2001
+From: AI Agent <ai-agent@example.com>
+Date: Sun, 15 Nov 2026 06:58:42 +0000
+Subject: [PATCH 2/2] M4: mobile detail bottle a bit higher/smaller (no overlap
+ with card)
+
+---
+ js/main.js | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/js/main.js b/js/main.js
+index c7cd5b6..61cb1a6 100644
+--- a/js/main.js
++++ b/js/main.js
+@@ -242,7 +242,7 @@ const heroUI = $('#heroUI'), detailUI = $('#detailUI'), ring = $('#ring'), intro
+ const bgColor = $('.bg-color'), bgFlash = $('.bg-flash'), statement = $('#statement'), dline = $('#dline');
+ const feats = [...document.querySelectorAll('.feat')], icons = [...document.querySelectorAll('#icons li')];
+ let featOn = -1;
+-const MOB_DY = 1.05, MOB_DZ = 2.2, MOB_DS = 1.3; // mobile detail pose: bottle in the top half, card below
++const MOB_DY = 1.22, MOB_DZ = 2.2, MOB_DS = 1.2; // mobile detail pose: bottle in the top half, card below
+ const tmpDark = new THREE.Color(0x0b0b0d), white = new THREE.Color(1, 1, 1);
+ 
+ function layout(t, dt) {
+-- 
+2.49.0
+

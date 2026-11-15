@@ -242,7 +242,7 @@ const heroUI = $('#heroUI'), detailUI = $('#detailUI'), ring = $('#ring'), intro
 const bgColor = $('.bg-color'), bgFlash = $('.bg-flash'), statement = $('#statement'), dline = $('#dline');
 const feats = [...document.querySelectorAll('.feat')], icons = [...document.querySelectorAll('#icons li')];
 let featOn = -1;
-const MOB_DY = 1.05, MOB_DZ = 2.2, MOB_DS = 1.3; // mobile detail pose: bottle in the top half, card below
+const MOB_DY = 1.22, MOB_DZ = 2.2, MOB_DS = 1.2; // mobile detail pose: bottle in the top half, card below
 const tmpDark = new THREE.Color(0x0b0b0d), white = new THREE.Color(1, 1, 1);
 
 function layout(t, dt) {

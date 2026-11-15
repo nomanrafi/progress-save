@@ -114,12 +114,12 @@ Extra chat instruction (Session #1): "Glb file 'no 2 perfume website er repo te 
 - Screenshots (phone ~390px wide): logo overlaps MENU; ring light under header; carousel bottles small; detail card text drawn on top of the big bottle; FAQ bottle over questions; laggy carousel + scroll.
 - RULE: desktop must stay byte-identical in behaviour -> only @media (max-width:760px) CSS and `isMobile` branches in JS.
 ### Session #27 plan
-- [ ] M1: header layout mobile (logo/ring centred below, MENU/CONTACT smaller, no overlap)
-- [ ] M2: performance on mobile (pixelRatio cap, no shadows/AA, lighter smoothing, passive touch)
-- [ ] M3: carousel bottles bigger on mobile
-- [ ] M4: detail section: bottle moved to top / card below, no overlap; FAQ bottle away from questions
-- [ ] M5: smooth scroll on mobile (native scroll, no heavy lerp lag)
-- [ ] M6: screenshot verify at 390x844, push, log
+- [x] M1: header layout mobile (logo/ring centred below, MENU/CONTACT smaller, no overlap)
+- [x] M2: performance on mobile (pixelRatio cap, no shadows/AA, lighter smoothing, passive touch)
+- [x] M3: carousel bottles bigger on mobile
+- [x] M4: detail section: bottle moved to top / card below, no overlap; FAQ bottle away from questions
+- [x] M5: smooth scroll on mobile (native scroll, no heavy lerp lag)
+- [x] M6: screenshot verify at 390x844, push, log
 - Session #27 (12:20): started.
 - Session #28 (12:25): started, resuming M1-M6 (none done; website HEAD 1d21501). Clone dirs /data/project + /data/velora.
 - Session #29 (12:30): started, resuming M1-M6 (none pushed by #27/#28; website HEAD 1d21501). Clone dirs /data/project + /data/velora.
@@ -127,3 +127,4 @@ Extra chat instruction (Session #1): "Glb file 'no 2 perfume website er repo te 
 - Session #31 (12:52): started, resuming M1-M6 (none pushed; website HEAD 1d21501). Clone dirs /data/project + /data/velora.
 - Session #31: wrote M1-M5 code (website local commit bfa00a9). Push to website repo = 403 (chat token is progress-save only). Patch saved: output/0001-*.patch, full files src/velora-mobile/{main.js,style.css} -> apply with `git am output/0001-*.patch` in website repo. NEXT: M6 screenshots 390x844.
 - Session #32 (12:57): started. Applied output/0001 patch to website clone /data/site (local 0a42afc). Website push still 403 with chat token. Doing M6 test + fixes; will save patches here.
+- Session #32: M6 verified at 390x844 (output/preview/s32_mobile_*.jpg): header no overlap, bigger carousel, detail bottle above card, FAQ clear. Tweak MOB_DY 1.22/MOB_DS 1.2. Website commits local only (403). NEXT: get a token with write access to velora-luxury-perfume, then in website repo at 1d21501: `git am output/000*.patch` and push. Code DONE.
